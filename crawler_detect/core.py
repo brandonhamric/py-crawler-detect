@@ -23,7 +23,7 @@ class CrawlerDetect(object):
         return [re.compile(pattern, re.IGNORECASE) for pattern in content.splitlines() if len(pattern) > 0]
 
     def is_crawler(self, user_agent):
-        user_agent_is_empty = not user_agent.strip()
+        user_agent_is_empty = not user_agent or len(user_agent.strip()) == 0
         if user_agent_is_empty and self.empty_ua_is_crawler:
             return True
 
