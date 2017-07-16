@@ -7,7 +7,7 @@ test_dependencies = [
 
 setup(
     name='py-crawler-detect',
-    version='0.1.1',
+    version='0.1.2',
     description='Python port of https://github.com/JayBizzle/Crawler-Detect',
     packages=find_packages(),
     package_data={'crawler_detect': ['resources/*']},
