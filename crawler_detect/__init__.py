@@ -6,4 +6,4 @@ RESOURCES_DIR = os.path.join(
     crawler_detect.__path__[0], 'resources',
 )
 
-from core import CrawlerDetect
+from .core import CrawlerDetect
