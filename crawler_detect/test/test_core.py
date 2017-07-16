@@ -1,12 +1,14 @@
 import os
+import pkg_resources
 
-from crawler_detect import RESOURCES_DIR, CrawlerDetect
+import crawler_detect
+from crawler_detect import CrawlerDetect
 
 
 def get_known_useragents():
-    known_crawler_useragents_path = os.path.join(RESOURCES_DIR, 'known_crawler_useragents.txt')
-    with open(known_crawler_useragents_path, 'r') as f:
-        return f.read().splitlines()
+    path = os.path.join('resources', 'known_crawler_useragents.txt')
+    content = pkg_resources.resource_string(crawler_detect.__name__, path)
+    return content.splitlines()
 
 
 def test_CrawlerDetect_is_crawler_on_known_bots():
