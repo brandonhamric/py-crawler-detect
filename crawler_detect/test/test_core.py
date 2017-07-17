@@ -16,8 +16,3 @@ def test_CrawlerDetect_is_crawler_on_known_bots():
 
     for user_agent in get_known_useragents():
         assert detect.is_crawler(user_agent)
-
-
-def test_CrawlerDetect_is_crawler_handles_None():
-    detect = CrawlerDetect()
-    assert detect.is_crawler(None)
